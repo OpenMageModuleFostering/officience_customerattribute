@@ -1,0 +1,47 @@
+<?php $fieldDefault = $this->getFieldDefault(); ?>
+<?php $attribute = $this->getListAttribute(); ?>
+<?php foreach ($attribute as $itemsAttribute): ?>
+    <?php $this->setAttribute($itemsAttribute); ?> 
+    <?php $attributeCode = $this->getAttributeCode(); ?> 
+    <?php if (!in_array($attributeCode, $fieldDefault)): ?> 
+        <?php $active = 1; ?>
+        <?php ?>
+        <?php continue; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
+<?php if ($active): ?>
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->getTitle() ?></h2>
+        <ul class="form-list">
+            <?php $count = 0; ?>
+            <?php foreach ($attribute as $itemsAttribute): ?>
+                <?php $this->setAttribute($itemsAttribute); ?>      
+                <?php $attributeCode = $this->getAttributeCode(); ?>    
+                <?php if (!in_array($attributeCode, $fieldDefault)): ?>
+                    <?php if ($count == 0): ?><li><?php endif; ?>
+                        <div class="field">
+                            <?php $required = $itemsAttribute->getIsRequired(); ?>
+                            <label for="<?php echo $attributeCode; ?>" class="<?php echo $required ? 'required' : '' ?>" ><?php echo $this->getLabelAttribute(); ?>
+                                <?php if ($required): ?>
+                                    <em>*</em>
+                                <?php endif; ?>
+                            </label>
+
+                            <div class="input-box">
+                                <?php echo $this->renderFieldType(); ?>
+                            </div>
+                        </div>
+                        <?php $count++; ?>
+                        <?php if ($count == 2): ?> </li>
+                        <?php
+                        $count = 0;
+                    endif;
+                    ?>
+                <?php endif; ?>       
+            <?php endforeach; ?>
+            <?php if ($count > 0): ?>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+<?php endif; ?>

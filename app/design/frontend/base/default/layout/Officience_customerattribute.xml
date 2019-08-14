@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <customer_account_create>   
+        <reference name="head">
+            <action method="addItem">
+                <type>js_css</type>
+                <name>calendar/calendar-win2k-1.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar-setup.js</name>
+            </action>
+        </reference>   
+        <block name="customer_form_register">
+            <action method="setTemplate">
+                <template>officience/customerattribute/form/register.phtml</template>
+            </action>
+            <block type="customerattribute/form_register" name="attribute.customer.register" as="attribute_customer_register" template="officience/customerattribute/form/field/items.phtml" />
+        </block>
+        <reference name="before_body_end">
+            <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
+        </reference>	
+    </customer_account_create>
+    <customer_account_edit>   
+        <reference name="head">
+            <action method="addItem">
+                <type>js_css</type>
+                <name>calendar/calendar-win2k-1.css</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>calendar/calendar-setup.js</name>
+            </action>
+        </reference>  
+        <block name="customer_edit">
+            <action method="setTemplate">
+                <template>officience/customerattribute/form/edit.phtml</template>
+            </action>
+            <block type="customerattribute/form_edit" name="attribute.customer.edit" as="attribute_customer_edit" template="officience/customerattribute/form/field/items.phtml" />
+        </block> 
+        <reference name="before_body_end">
+            <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
+        </reference>	   
+    </customer_account_edit>
+</layout>

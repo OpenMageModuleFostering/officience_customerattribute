@@ -1,0 +1,25 @@
+<div class="field">
+    <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+    <div class="input-box">
+        <?php $inputType = $this->getTypleInput(); ?>
+        <?php if ($inputType == 'text'): ?>
+            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+        <?php elseif ($inputType == 'textarea'): ?>
+            <textarea id="" class="">
+
+            </textarea>
+        <?php elseif ($inputType == 'date'): ?>
+            
+        <?php elseif ($inputType == 'boolean'): ?>
+            <input type="checkbox" id="" name="" />
+        <?php elseif ($inputType == 'multiselect'): ?>
+            <select multiple="multiple" id="" class="" name="">
+                <option></option>
+            </select>
+        <?php elseif ($inputType == 'select'): ?>
+            <select id="" class="" name="">
+                <option></option>
+            </select>
+        <?php endif; ?>
+    </div>
+</div>
