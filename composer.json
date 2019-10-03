@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Officience_CustomerAttribute",
+    "name": "OpenMageModuleFostering\/Officience_CustomerAttribute",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
     "description": "A customer attributes manager extension which can collect customer's information smarter",
     "authors": [
-    {
-        "name": "khanh trieu nguyen le",
-        "email": "trieu181989@gmail.com"
-    }
-],
+        {
+            "name": "khanh trieu nguyen le",
+            "email": "trieu181989@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
